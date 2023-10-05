@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+    
+    var screen = document.querySelector("canvas");
+    var brush = screen.getContext("2d");
+    brush.fillStyle = "grey";
+    brush.fillRect(0,0,600,400);
+    var colours = ["blue","red","green","purple"];
+    var curcolindex = 0;
+
+    function showalert(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        console.log(event);
+        alert("Hiciste click en las coordenadas X = "+x+", Y = "+y);
+    }
+
+    function drawcrc(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        brush.fillStyle = colours[curcolindex];
+        brush.beginPath();
+        brush.arc(x,y,10,0,2*3.14);
+        brush.fill();
+
+        console.log("X = "+x+", Y = "+y)
+    }
+
+    screen.onclick = drawcrc;
+
+    function altercolour () {
+        curcolindex++;
+        alert(curcolindex);
+        if(curcolindex>=colours.length) {
+            curcolindex = 0;
+        };
+        return false;
+    };
+
+    screen.oncontextmenu = altercolour;
+
+    //screen.onclick = showalert;
+
+
+</script>

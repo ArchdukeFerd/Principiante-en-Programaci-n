@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<h1>Todos los números pares del 1 al 100</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    var num = 2;
+    var limit = parseInt(prompt("Escribe hasta qué número quieres conocer los pares:"));
+    
+    while (num <= limit) {
+        write(num+" es un número par.");
+        num = num + 2;
+    };
+
+    write("Fin");
+</script>

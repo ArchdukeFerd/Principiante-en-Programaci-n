@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<h1>Juego de Adivinación</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    for (var lines = 1;lines <= 3;lines++) {
+        for (var columns = 1;columns <= 10;columns++){
+            document.write("*");
+        }
+        newline();
+    }
+    
+
+    write("Fin.")
+
+</script>

@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector("canvas");
+    var brush = screen.getContext("2d");
+    brush.fillStyle = "lightgrey";
+    brush.fillRect (0,0,600,400);
+    brush.fill();
+
+    function bartext (x,y,text){
+        brush.fillStyle = "black";
+        brush.font = "15px Georgia";
+        brush.fillText(text,x,y-10);
+    }
+
+    function drawrec (x,y,width,height,colour){
+        brush.fillStyle = colour;
+        brush.fillRect(x,y,width,height);
+        brush.strokeStyle = "black";
+        brush.strokeRect(x,y,width,height);
+        brush.beginPath();
+        brush.fill();
+    }
+
+    function drawbar (x,y,width,series,colour,text){
+        bartext(x,y,text);
+        var cumul = 0;
+        for(var i=0; i<=series.length;i++){
+            height = series[i];
+            drawrec(x,y+cumul,width,height,colour[i]);
+            cumul = cumul + height;
+        }
+    }
+
+    var series2009 = [6, 47, 41, 3, 3];
+    var series2019 = [81, 9, 3, 3, 4];
+    var colour = ["blue", "green", "yellow", "red", "orange"];
+
+    drawbar (50, 50, 50, series2009, colour, "2009");
+    drawbar (150, 50, 50, series2019, colour, "2019");
+
+</script>

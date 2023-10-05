@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+<h1>Calcular la tabla de multiplicar</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    var multiplier = 1;
+
+    write("While")
+    
+    while (multiplier <= 10) {
+        write(5*multiplier);
+        multiplier++;
+    };
+
+    write("For");
+
+    for (var multiplier = 1;multiplier <= 10;multiplier++) {
+        write(5*multiplier);
+    };
+
+</script>

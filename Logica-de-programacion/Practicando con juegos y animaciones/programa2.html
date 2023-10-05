@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+    function newline(){
+        document.write("<br>");
+        document.write("<br>");
+    };
+    
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    function drawsq(x,y,colour){
+        var screen = document.querySelector("canvas");
+        var brush = screen.getContext("2d");
+        brush.fillStyle = colour;
+        brush.fillRect(x,y,50,50);
+        brush.strokeStyle = "black";
+        brush.strokeRect(x,y,50,50);
+    }
+
+    drawsq(0,0,"red");
+    drawsq(0,50,"yellow");
+    drawsq(0,100,"green");
+
+</script>

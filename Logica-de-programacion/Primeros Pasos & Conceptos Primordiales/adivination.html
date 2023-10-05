@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<h1>Juago de Adivinación</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    var rnum = Math.round(Math.random()*10);
+    var inputnum = parseInt(prompt("Ingrese un número entre 0-10"));
+
+    if (inputnum == rnum) {
+        write("Acertaste!");
+    }
+
+    else {
+        write("Fallaste! El número era: "+rnum);
+    };
+
+</script>

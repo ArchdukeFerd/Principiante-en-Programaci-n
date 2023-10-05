@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<h1>¿Hubo mundial o no?</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    var wcup = 1930;
+    var limit = parseInt(prompt("Ingrese el año límite para calcular si hubo o no mundial"));
+    
+    while (wcup <= limit) {
+        write("Hubo mundial de la FIFA en "+wcup);
+        wcup = wcup + 4;
+    };
+
+    write("Fin");
+</script>

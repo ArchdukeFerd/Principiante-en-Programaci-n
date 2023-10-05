@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<h1>Interactuando con el usuario</h1>
+<script>
+    function newline() {
+        document-write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    function calcimc(weight,height) {
+        imc = weight/(height*height);
+        return(imc);
+    };
+
+    var name = prompt("Indique su nombre")
+    var infw = prompt(name+", indique su peso:");
+    var infh = prompt(name+", indique su altura:");
+    cimc = calcimc(infw,infh);
+
+    write(name+", su IMC calculado es: "+cimc+", redondeado a "+Math.round(cimc))
+</script>

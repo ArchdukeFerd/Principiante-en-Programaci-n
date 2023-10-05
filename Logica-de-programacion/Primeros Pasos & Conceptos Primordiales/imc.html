@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<h1>Cálculo de IMC (Índice de Masa Corporal)</h1>
+<script>
+
+    function newline() {
+        document-write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    function calcimc(weight,height,name) {
+        imc = Math.round(weight/(height*height));
+        write("El IMC de "+name+" es: "+imc)
+    };
+
+    calcimc(53.5,1.70,"Fernando");
+</script>

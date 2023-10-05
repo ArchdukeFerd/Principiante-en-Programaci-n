@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+    var screen = document.querySelector("canvas");
+    var brush = screen.getContext("2d");
+    brush.fillStyle = "lightgray";
+    brush.fillRect(0, 0, 600, 400);
+
+    function drawcrc(x, y, ratio, colour) {
+        brush.fillStyle = colour;
+        brush.beginPath();
+        brush.arc(x, y, ratio, 0, 2*3.14);
+        brush.fill();
+    }
+    function drawflw(x,y) {
+        drawcrc(x, y+20, 10, "blue");
+        drawcrc(x, y, 10, "red");
+        drawcrc(x, y-20, 10, "yellow");
+        drawcrc(x-20, y, 10, "orange");
+        drawcrc(x+20, y, 10, "black");
+    }
+    
+    drawflw(300,200);
+
+</script>

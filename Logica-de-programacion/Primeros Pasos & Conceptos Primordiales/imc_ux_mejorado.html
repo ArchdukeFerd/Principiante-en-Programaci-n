@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+<h1>Interactuando con el usuario</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    function calcimc(weight,height) {
+        imc = weight/(height*height);
+        return(imc);
+    };
+
+    var name = prompt("Indique su nombre")
+    var infw = prompt(name+", indique su peso:");
+    var infh = prompt(name+", indique su altura:");
+    cimc = calcimc(infw,infh);
+
+    write(name+", su IMC calculado es: "+cimc+", redondeado a "+Math.round(cimc))
+
+    if (cimc < 18.5) {
+        write(name+", su IMC está por debajo del normal y en la categoría de insuficiencia ponderal");
+    };
+
+    if (cimc > 18.5 && cimc < 25.0) {
+        write(name+", su IMC está normal");
+    };
+
+    if (cimc > 25 && cimc < 29.9) {
+        write(name+", su IMC está por encima del normal y en la categoría de sobrepeso");
+    };
+
+    if (cimc >= 30) {
+        write(name+", su IMC está por encima del sobrepeso y en la categoría de obesidad");
+    };
+
+    if (cimc >= 40) {
+        write(name+", su IMC está por encima del sobrepeso y en la categoría de obesidad grado III");
+    };
+
+</script>

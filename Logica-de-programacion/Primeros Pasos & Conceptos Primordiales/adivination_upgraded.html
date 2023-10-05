@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<h1>Juego de Adivinación</h1>
+<script>
+    function newline() {
+        document.write("<br>");
+        document.write("<br>");
+    };
+
+    function write(input) {
+        document.write(input);
+        newline();
+    };
+
+    var rnum = Math.round(Math.random()*10);
+    var tries = 3;
+    var counter = 1;
+
+    while (counter <= tries) {
+        var inputnum = parseInt(prompt("Ingrese un número entre 0-10"));
+        if (inputnum == rnum) {
+            alert("Acertaste! Solo usaste "+counter+" intentos; el número pensado era "+rnum);
+            break;
+        }
+
+        else {
+            alert("Fallaste! El número era: "+rnum);
+        }
+        counter++;
+    };
+
+    if (rnum == inputnum) {
+        alert("Acertaste! Solo usaste "+counter+" intentos; el número pensado era "+rnum);
+    }
+    
+    else {
+        alert("Fallaste! El número era: "+rnum);
+    }
+
+    write("Fin del juego.")
+
+</script>

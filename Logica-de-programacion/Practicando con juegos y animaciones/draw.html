@@ -1,0 +1,34 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var screen = document.querySelector('canvas');
+    var brush = screen.getContext('2d');
+    brush.fillStyle = 'grey';
+    brush.fillRect(0, 0, 600, 400);
+    var draw = false;
+
+    function drawcrc(event) {
+        if(draw) {
+            var x = event.pageX - screen.offsetLeft;
+            var y = event.pageY - screen.offsetTop;
+            brush.fillStyle = 'blue';
+            brush.beginPath();
+            brush.arc(x,y,5,0,2*3.14);
+            brush.fill();
+        }
+    }
+
+    screen.onmousemove = drawcrc;
+
+    function enabledraw() {
+        draw = true;
+    }
+
+    function unabledraw() {
+        draw = false;
+    }
+
+    screen.onmousedown = enabledraw;
+    screen.onmouseup = unabledraw;
+
+</script>

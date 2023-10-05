@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<script>
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+    var posint = 3;
+    var intact = 1;
+
+    while (intact <= posint) {
+    var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    var contrasenhaIngresada = prompt("Ingrese su contraseña");
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            intact = posint;
+        } 
+        else {
+            if (intact == 3) {
+                alert("Agotaste el número permitido de intentos. Favor de notificar al administrador.");
+            }
+            else {
+                alert("Inicio de sesión inválido, por favor intente nuevamente.")
+            }
+        }  
+        intact = intact+1 
+    }
+</script>
